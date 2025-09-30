@@ -31,5 +31,21 @@ int main() {
         contadorRainha++;
     } while (contadorRainha <= casasRainha);
 
+    printf("\n");
+
+    // ================= CAVALO =================
+    // Movimento: baixo, baixo, esquerda
+    int i, j;
+    // loop para "Baixo"
+    for (i = 1; i <= 1; i++) // loop so para a estrutura externa, vai repetir so 1 vez
+    {
+        for (j = 1; j <= 2; j++) // loop que ira repetir 2 vezes
+        {
+            printf("Baixo\n");
+        }
+        // depois do loop interno, imprime "Esquerda"
+        printf("Esquerda\n");
+    }
+
     return 0;
 }
