@@ -1,39 +1,45 @@
 #include <stdio.h>
 
-int main() {
-    // ================= TORRE =================
-    // Movimento: 5 casas para a direita
-    int casasTorre = 5;  
-    printf("Movimento da Torre:\n");
-    for (int i = 1; i <= casasTorre; i++) {
-        printf("Direita\n");
+    // ================= MOVIMENTOS =================
+    void direita(int d){
+        if (d>0) {
+            printf("Direita\n");
+            direita(d-1);
+        }
     }
-    printf("\n");
-
-    // ================= BISPO =================
-    // Movimento: 5 casas na diagonal
-    int casasBispo = 5;
-    int contadorBispo = 1;
-    printf("Movimento do Bispo:\n");
-    while (contadorBispo <= casasBispo) {
-        printf("Cima Direita\n");
-        contadorBispo++;
+    void esquerda(int e){
+        if (e>0) {
+            printf("Esquerda\n");
+            esquerda(e-1);
+        }
     }
-    printf("\n");
+    void cima(int c){
+        if (c>0) {
+            printf("Cima\n");
+            cima(c-1);
+        }
+    }
+    void baixo(int b){
+        if (b>0) {
+            printf("Baixo\n");
+            baixo(b-1);
+        }
+    }
 
-    // ================= RAINHA =================
-    // Movimento: 8 casas para a esquerda
-    int casasRainha = 8;
-    int contadorRainha = 1;
-    printf("Movimento da Rainha:\n");
-    do {
-        printf("Esquerda\n");
-        contadorRainha++;
-    } while (contadorRainha <= casasRainha);
 
-    printf("\n");
-
-    // ================= CAVALO =================
+    int main() {
+   // ================= BISPO =================
+    printf("\nMovimento do Bispo\n");
+    direita(5);
+    cima(5);
+   // ================= TORRE =================
+    printf("\nMovimento da Torre\n");
+    direita(5);
+   // ================= RAINHA =================
+    printf("\nMovimento da Rainha\n");
+    esquerda(8);
+    printf("\n"); // Printf para pular uma linha.
+   // ================= CAVALO =================
     // Movimento: baixo, baixo, esquerda
     int i, j;
     // loop para "Baixo"
@@ -41,10 +47,10 @@ int main() {
     {
         for (j = 1; j <= 2; j++) // loop que ira repetir 2 vezes
         {
-            printf("Baixo\n");
+            printf("Cima\n");
         }
-        // depois do loop interno, imprime "Esquerda"
-        printf("Esquerda\n");
+        // depois do loop interno, imprime "Direita"
+        printf("Direita\n");
     }
 
     return 0;
